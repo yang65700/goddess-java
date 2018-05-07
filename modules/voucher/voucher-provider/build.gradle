@@ -26,9 +26,10 @@ sourceSets {
 }
 
 dependencies {
-    compile project(":common:common-jpa")
-    compile project(":common:common-provider")
-    compile project(":modules:voucher:voucher-api")
-    compile project(":common:common-utils")
+    compile group: 'com.bjike.goddess', name: 'common-jpa', version: "1.0"
+    compile group: 'com.bjike.goddess', name: 'common-provider', version: "1.0"
+    compile group: 'com.bjike.goddess', name: 'voucher-api', version: "1.0"
+    compile group: 'com.bjike.goddess', name: 'common-utils', version: "1.0"
+
 }
 

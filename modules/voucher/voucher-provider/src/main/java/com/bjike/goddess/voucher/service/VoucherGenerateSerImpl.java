@@ -6750,6 +6750,7 @@ public class VoucherGenerateSerImpl extends ServiceImpl<VoucherGenerate, Voucher
         informationBO.setTime(startTime + "~" + endTime);//获取时间
         RpcTransmit.transmitUserToken(token);
         informationBO.setProducer(userAPI.currentUser().getUsername());//获取制作人名字
+       // informationBO.setProducer("admin");
 //        String sql="select companyName from financeinit_baseparameter";
 //        String []fils=new String[]{"companyName"};
 //         List<BaseParameterBO>  list=super.findBySql(sql,BaseParameterBO.class,fils);
