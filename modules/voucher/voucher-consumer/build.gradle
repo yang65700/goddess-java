@@ -1,12 +1,20 @@
+
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
     }
 }
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
 apply plugin: 'org.springframework.boot'
 jar {
     String buildDir = project.buildDir
@@ -32,14 +40,19 @@ sourceSets {
         }
     }
 }
+version '1.0'
+
 dependencies {
-    compile(project(":common:common-consumer")) {
+//    compile group: 'com.bjike.gocommon-consumerddess', name: 'common-consumer', version: "1.0"
+    compile('com.bjike.goddess:common-consumer:1.0') {
         exclude group: 'org.slf4j', module: 'slf4j-log4j12'
     }
 
-    compile project(":modules:voucher:voucher-api")
+    compile('com.bjike.goddess:voucher-api:1.0')
+// https://mvnrepository.com/artifact/org.javassist/javassist
+    compile group: 'org.javassist', name: 'javassist', version: '3.22.0-GA'
 
-    compile group: 'com.caucho', name: 'hessian', version: "$hessian_version"
+    compile group: 'com.caucho', name: 'hessian', version: "4.0.33"
     compile("org.springframework.boot:spring-boot-starter-web")
 }
 
